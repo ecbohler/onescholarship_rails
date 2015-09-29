@@ -1,0 +1,13 @@
+<h1>Editing Student</h1>
+
+<%= form_for @student do |f| %>
+  <% @attributes.each do |attr| %>
+    <% f.text_field attr.to_sym %>
+  <% end %>
+<% end %>
+
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @student %> |
+<%= link_to 'Back', students_path %>
