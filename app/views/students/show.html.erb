@@ -1,13 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
+  <strong>First Name:</strong>
   <%= @student.first_name %>
 </p>
 
 <p>
-  <strong>String:</strong>
-  <%= @student.string %>
+  <strong>Last Name:</strong>
+  <%= @student.last_name %>
+</p>
+
+<p>
+  <strong>Student Status:</strong>
+  <%= @student.student_status %>
+</p>
+
+<p>
+  <strong>Zip Code:</strong>
+  <%= @student.zip_code %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @student.gender %>
+</p>
+
+<p>
+  <strong>Ethnicity:</strong>
+  <%= @student.ethnicity %>
+</p>
+
+<p>
+  <strong>GPA:</strong>
+  <%= @student.gpa %>
+</p>
+
+<p>
+  <strong>Major:</strong>
+  <%= @student.major %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |

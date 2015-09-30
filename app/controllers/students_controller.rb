@@ -19,8 +19,7 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
-    @student = Student.find_by user_id: current_user.id
-    @attributes = Student.attribute_names - %w(id user_id created_at updated_at)
+    @student = Student.find(params[:id])
   end
 
   # POST /students
@@ -42,14 +41,12 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
-    respond_to do |format|
-      if @student.update(student_params)
-        format.html { redirect_to @student, notice: 'Student was successfully updated.' }
-        format.json { render :show, status: :ok, location: @student }
-      else
-        format.html { render :edit }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
-      end
+    @student = Student.find(params[:id])
+
+    if @student.update_attributes(student_params)
+      redirect_to @student
+    else
+      render 'edit'
     end
   end
 
@@ -63,6 +60,11 @@ class StudentsController < ApplicationController
     end
   end
 
+  def show
+    @student = Student.find(params[:id])
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
@@ -71,6 +73,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:first_name, :string)
+      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major)
     end
-end
+  end

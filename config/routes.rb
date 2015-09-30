@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
+  devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'} do
+    get "users/sign_up" => "users/registrations#new", :as => :users_sign_up
+    get "users/sign_in" => "users/sessions#new", :as => :users_sign_in
+  end
   get 'home/index'
 
-  resources :students, only: [:edit]
+  resources :students
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
