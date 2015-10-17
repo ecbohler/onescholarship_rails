@@ -1,16 +1,24 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'} do
-    get "users/sign_up" => "users/registrations#new", :as => :users_sign_up
-    get "users/sign_in" => "users/sessions#new", :as => :users_sign_in
+    get "users/register" => "users/registrations#new", :as => :users_sign_up
+    get "users/login" => "users/sessions#new", :as => :users_sign_in
+    get "users/logout" => "users/sessions#delete", :as => :users_sign_out
   end
   get 'home/index'
 
-  resources :students
+  # get ':last_name', to: 'students#show', as: :student
+
+  resources :students do
+    resources :scholarships, only: [:show, :index] do
+      resources :results, only: [:index]
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'home#index'
+  root 'home#index'
    # get 'home' => 'home#index'
 
   # Example of regular route:

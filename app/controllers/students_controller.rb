@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @student = Student.find(params[:id])
   end
 
   # GET /students/new
@@ -59,11 +60,6 @@ class StudentsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def show
-    @student = Student.find(params[:id])
-  end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

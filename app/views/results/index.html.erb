@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @match.each do |match| %>
+    <br>
+    <%= match %>
+    <br>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', student_scholarships_path %>

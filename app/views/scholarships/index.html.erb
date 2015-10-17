@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Available Scholarships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Student Status</th>
+      <th>Gender</th>
+      <th>Ethnicity</th>
+      <th>Gpa</th>
+      <th>Major</th>
+      <th>Website</th>
+      <th>Deadline</th>
+      <th>Amount</th>
+      <th>Other</th>
+      <th>Community service</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @scholarships.each do |scholarship| %>
+    <tr>
+      <td><%= link_to "#{scholarship.name}", student_scholarship_path(id: scholarship.id) %> </td>
+      <td><%= scholarship.student_status %></td>
+      <td><%= scholarship.gender %></td>
+      <td><%= scholarship.ethnicity %></td>
+      <td><%= scholarship.gpa %></td>
+      <td><%= scholarship.major %></td>
+      <td id="sch_url"><%= scholarship.website %></td>
+      <td><%= scholarship.deadline %></td>
+      <td><%= scholarship.amount %></td>
+      <td><%= scholarship.other %></td>
+      <td><%= scholarship.community_service %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'View My Profile', student_path(@student, @scholarship) %>
+<%= link_to 'Edit My Profile', edit_student_path(@student, @scholarship) %>
