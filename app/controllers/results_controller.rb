@@ -8,10 +8,8 @@ class ResultsController < ApplicationController
   def index
     @match = []
     @student = Student.find(params[:student_id])
-    p @student
+    # p @student
     @scholarships = Scholarship.all
-    # @scholarship = Scholarship.find(params[:scholarship_id])
-    # p @scholarships
     @scholarships.each do |scholarship|
       p scholarship
       unless
