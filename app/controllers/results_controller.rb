@@ -1,4 +1,6 @@
 class ResultsController < ApplicationController
+  require 'date'
+
   before_action :set_result, only: [:show]
   before_action :set_scholarship, only: [:show, :edit, :update, :destroy]
   before_action :set_student, only: [:show, :edit, :update, :destroy]
@@ -10,43 +12,72 @@ class ResultsController < ApplicationController
     @student = Student.find(params[:student_id])
     # p @student
     @scholarships = Scholarship.all
+
     @scholarships.each do |scholarship|
-      p scholarship
-      unless
-        scholarship.gpa != '0'
-      else
-        @student.gpa >= scholarship.gpa
-        @match << scholarship.name
+
+      # p scholarship
+
+      if scholarship.student_status == @student.student_status || scholarship.student_status == '0'
+
+        @match << scholarship
       end
-    # elsif
-    #   @student.gender == @scholarship.gender
-    #   unless
-    #     @scholarship.name.include? '#{@scholarship.name}'
-    #     @match << @scholarship.name
-    #   end
-    # elsif
-    #   @student.student_status == @scholarship.student_status
-    #   unless
-    #     @scholarship.name.include? '#{@scholarship.name}'
-    #     @match << @scholarship.name
-    #   end
-    # elsif
-    #   @student.ethnicty == @scholarship.ethnicity
-    #   unless
-    #     @scholarship.name.include? '#{@scholarship.name}'
-    #     @match << @scholarship.name
-    #   end
-    # elsif
-    #   @student.major == @scholarship.major
-    #   unless
-    #     @scholarship.name.include? '#{@scholarship.name}'
-    #     @match << @scholarship.name
-    #   end
+    end
+
+        # p @match
+
+        @match2 = []
+
+        @match.each do |match|
+
+          if @student.gpa >= match.gpa
+
+            @match2 << match
+
+            # p @match2
+          end
+        end
+
+        @match3 = []
+        @match2.each do |match|
+          if @student.gender == match.gender || match.gender == '0'
+            @match3 << match
+
+                # p @match3
+              end
+            end
+
+            @match4 = []
+            @match3.each do |match|
+              if @student.major == match.major || match.major =='0'
+                @match4 << match
+
+                # p @match4
+
+              end
+            end
+
+            @match5 = []
+            @match4.each do |match|
+              if @student.ethnicity == match.ethnicity || match.ethnicity == '0'
+                @match5 << match
+
+                # p @match5
+
+              end
+            end
+
+            @match6 = []
+            @match5.each do |match|
+              if match.deadline >= Date.today
+                @match6 << match.name
+
+              # p @match6
+
+              end
+            end
 
 
-  end
-end
-p @match
+            end
 
   # GET /results/1
   # GET /results/1.json
