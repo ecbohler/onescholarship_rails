@@ -20,4 +20,6 @@
 
 <br>
 
-<%= link_to 'Back', student_scholarships_path %>
+<%= link_to 'View My Profile', student_path(@student) %> |
+<%= link_to 'Edit My Profile', edit_student_path(@student) %> |
+<%= link_to 'All Scholarships', student_scholarships_path(@student) %>

@@ -69,15 +69,22 @@ class ScholarshipsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_result
+      @result = Result.find(params[:id])
+    end
+
     def set_scholarship
       @scholarship = Scholarship.find(params[:id])
     end
 
     def set_student
-      @student = Student.find(params[:student_id])
+      @student = Student.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    def result_params
+      params[:result]
+    end
     def scholarship_params
       params.require(:scholarship).permit(:name, :student_staus, :string, :gender, :ethnicity, :gpa, :major, :website, :deadline, :amount, :other, :community_service)
     end
@@ -85,5 +92,4 @@ class ScholarshipsController < ApplicationController
     def student_params
       params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major)
     end
-
   end

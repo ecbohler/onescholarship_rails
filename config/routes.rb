@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   # get ':last_name', to: 'students#show', as: :student
 
   resources :students do
-    resources :scholarships, only: [:show, :index] do
-      resources :results, only: [:index]
-    end
+    resources :scholarships, only: [:show, :index]
+    resources :results, only: [:index]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
