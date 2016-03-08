@@ -2,21 +2,22 @@ class ResultsController < ApplicationController
   require 'date'
   require 'time'
 
-  before_action :set_result, only: [:show]
+  before_action :authenticate_user!
+
+  load_and_authorize_resource
+  # before_action :set_result, only: [:show]
   before_action :set_scholarship, only: [:show, :edit, :update, :destroy]
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  # before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   # GET /results
   # GET /results.json
   def index
     @match = []
     @student = Student.find(params[:student_id])
-    # p @student
     @scholarships = Scholarship.all
 
     @scholarships.each do |scholarship|
 
-      # p scholarship
 
       if scholarship.student_status == @student.student_status || scholarship.student_status == '0'
 
@@ -24,7 +25,6 @@ class ResultsController < ApplicationController
       end
     end
 
-        # p @match
 
         @match2 = []
 
@@ -34,7 +34,6 @@ class ResultsController < ApplicationController
 
             @match2 << match
 
-            # p @match2
           end
         end
 
@@ -43,7 +42,6 @@ class ResultsController < ApplicationController
           if @student.gender == match.gender || match.gender == '0'
             @match3 << match
 
-                # p @match3
               end
             end
 
@@ -51,8 +49,6 @@ class ResultsController < ApplicationController
             @match3.each do |match|
               if @student.major == match.major || match.major =='0'
                 @match4 << match
-
-                # p @match4
 
               end
             end
@@ -62,8 +58,6 @@ class ResultsController < ApplicationController
               if @student.ethnicity == match.ethnicity || match.ethnicity == '0'
                 @match5 << match
 
-                # p @match5
-
               end
             end
 
@@ -71,8 +65,6 @@ class ResultsController < ApplicationController
             @match5.each do |match|
               if match.deadline >= Time.now
                 @match6 << match.name
-
-              # p @match6
 
             end
           end
@@ -87,7 +79,7 @@ class ResultsController < ApplicationController
 
   # GET /results/new
   def new
-    @result = Result.new
+    # @result = Result.new
   end
 
   # GET /results/1/edit
@@ -97,7 +89,7 @@ class ResultsController < ApplicationController
   # POST /results
   # POST /results.json
   def create
-    @result = Result.new(result_params)
+    # @result = Result.new(result_params)
 
     respond_to do |format|
       if @result.save
@@ -136,17 +128,17 @@ class ResultsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_result
-      @result = Result.find(params[:id])
-    end
+    # def set_result
+    #   @result = Result.find(params[:id])
+    # end
 
-    def set_scholarship
-      @scholarship = Scholarship.find(params[:id])
-    end
+    # def set_scholarship
+    #   @scholarship = Scholarship.find(params[:id])
+    # end
 
-    def set_student
-      @student = Student.find(params[:id])
-    end
+    # def set_student
+    #   @student = Student.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def result_params

@@ -8,4 +8,8 @@ def after_sign_in_path_for(student)
   edit_student_path(student)
 end
 
+rescue_from CanCan::AccessDenied do |exception|
+  redirect_to student_scholarships_path(@student), :notice => 'Access Denied'
+end
+
 end

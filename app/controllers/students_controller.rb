@@ -1,5 +1,9 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
+  load_and_authorize_resource
+
+  # before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   # GET /students
   # GET /students.json
@@ -15,18 +19,18 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new
+    # @student = Student.new
   end
 
   # GET /students/1/edit
   def edit
-    @student = Student.find(params[:id])
+    # @student = Student.find(params[:id])
   end
 
   # POST /students
   # POST /students.json
   def create
-    @student = Student.new(student_params)
+    # @student = Student.new(student_params)
 
     respond_to do |format|
       if @student.save
@@ -42,7 +46,7 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
-    @student = Student.find(params[:id])
+    # @student = Student.find(params[:id])
 
     if @student.update_attributes(student_params)
       redirect_to @student
@@ -63,17 +67,17 @@ class StudentsController < ApplicationController
 
 private
     # Use callbacks to share common setup or constraints between actions.
-    def set_result
-      @result = Result.find(params[:id])
-    end
+    # def set_result
+    #   @result = Result.find(params[:id])
+    # end
 
-    def set_scholarship
-      @scholarship = Scholarship.find(params[:id])
-    end
+    # def set_scholarship
+    #   @scholarship = Scholarship.find(params[:id])
+    # end
 
-    def set_student
-      @student = Student.find(params[:id])
-    end
+    # def set_student
+    #   @student = Student.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def result_params

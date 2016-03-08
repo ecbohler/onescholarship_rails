@@ -1,4 +1,5 @@
 class ScholarshipsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_scholarship, only: [:show, :edit, :update, :destroy]
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
@@ -13,9 +14,7 @@ class ScholarshipsController < ApplicationController
   # GET /scholarships/1.json
   def show
     @scholarship = Scholarship.find(params[:id])
-    p @scholarship
     @student = Student.find(params[:student_id])
-    p @student
   end
 
   # GET /scholarships/new
@@ -68,18 +67,18 @@ class ScholarshipsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_result
-      @result = Result.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_result
+    @result = Result.find(params[:id])
+  end
 
-    def set_scholarship
-      @scholarship = Scholarship.find(params[:id])
-    end
+  def set_scholarship
+    @scholarship = Scholarship.find(params[:id])
+  end
 
-    def set_student
-      @student = Student.find(params[:id])
-    end
+  def set_student
+    @student = Student.find(params[:id])
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def result_params

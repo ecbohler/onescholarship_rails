@@ -39,5 +39,7 @@
   </tbody>
 </table>
 
-<%= link_to 'View My Profile', student_path(@student, @scholarship) %>
-<%= link_to 'Edit My Profile', edit_student_path(@student, @scholarship) %>
+<%= link_to 'View My Profile', student_path(@student) %> |
+<%= link_to 'Edit My Profile', edit_student_path(@student) %> |
+<%= link_to 'My Results', student_results_path(@student) %>
+
