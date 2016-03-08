@@ -5,9 +5,9 @@ class ResultsController < ApplicationController
   before_action :authenticate_user!
 
   load_and_authorize_resource
-  # before_action :set_result, only: [:show]
+  before_action :set_result, only: [:show]
   before_action :set_scholarship, only: [:show, :edit, :update, :destroy]
-  # before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   # GET /results
   # GET /results.json
@@ -62,6 +62,7 @@ class ResultsController < ApplicationController
             end
 
             @match6 = []
+            authorize! :read, @match6
             @match5.each do |match|
               if match.deadline >= Time.now
                 @match6 << match.name
@@ -89,7 +90,7 @@ class ResultsController < ApplicationController
   # POST /results
   # POST /results.json
   def create
-    # @result = Result.new(result_params)
+    @result = Result.new(result_params)
 
     respond_to do |format|
       if @result.save
@@ -128,17 +129,17 @@ class ResultsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    # def set_result
-    #   @result = Result.find(params[:id])
-    # end
+    def set_result
+      @result = Result.find(params[:id])
+    end
 
-    # def set_scholarship
-    #   @scholarship = Scholarship.find(params[:id])
-    # end
+    def set_scholarship
+      @scholarship = Scholarship.find(params[:id])
+    end
 
-    # def set_student
-    #   @student = Student.find(params[:id])
-    # end
+    def set_student
+      @student = Student.find(params[:id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def result_params
