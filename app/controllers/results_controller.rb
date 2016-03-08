@@ -14,6 +14,7 @@ class ResultsController < ApplicationController
   def index
     @match = []
     @student = Student.find(params[:student_id])
+    authorize! :read, @student
     @scholarships = Scholarship.all
 
     @scholarships.each do |scholarship|
@@ -62,7 +63,7 @@ class ResultsController < ApplicationController
             end
 
             @match6 = []
-            authorize! :read, @match6
+            # authorize! :read, @match6
             @match5.each do |match|
               if match.deadline >= Time.now
                 @match6 << match.name
