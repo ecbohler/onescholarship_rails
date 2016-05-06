@@ -6,10 +6,258 @@
 
 <body>
   <section>
-    <div>
-      <h1>Welcome to OneScholarship</h1>
+    <div class="container-fluid bg-blue">
+      <div class="jumbotron text-center slideanim">
+        <h1>Welcome to OneScholarship</h1>
+        <p>Sign Up for our Monthly Newsletter</p>
+        <form class="form-inline">
+          <input type="email" class="form-control" size="50" placeholder="Email Address">
+          <button type="button" class="btn btn-default">Sign Up</button>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <h1 class="text-center"><strong>How OneScholarship works?</strong></h1>
+        <br>
+        <div class="row">
+          <div class="col-sm-8">
+            <h4>Join and Match Instantly</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel est at neque semper vulputate id id dolor. Nullam fringilla vel augue eu pulvinar.
+            </p>
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-signal logo slideanim"></span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-signal logo slideanim"></span>
+          </div>
+          <div class="col-sm-8">
+            <h4>Click "Apply"</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel est at neque semper vulputate id id dolor. Nullam fringilla vel augue eu pulvinar.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-8">
+            <h4>Sit Back and Wait for the $$$</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel est at neque semper vulputate id id dolor. Nullam fringilla vel augue eu pulvinar.
+            </p>
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-signal logo slideanim"></span>
+          </div>
+        </div>
+
+        <button class="btn btn-default btn-lg">Contact Us</button>
+      </div>
+
+      <div class="container-fluid bg-blue">
+        <div class="row">
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-globe logo slideanim">
+            </span>
+          </div>
+          <h2>Our Company</h2>
+          <h4><strong>MISSION:</strong> Our mission is to...</h4>
+          <p><strong>VISION:</strong> Our vision is...</p>
+        </div>
+      </div>
     </div>
-    <%= link_to 'Login', new_user_session_path %>
-  </section>
+
+    <div class="container-fluid text-center">
+      <h2>Our Founders</h2>
+      <br>
+      <div class="row">
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-off slideanim"></span>
+          <h4>Dorian Bohler</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel est at neque semper vulputate id id dolor. Nullam fringilla vel augue eu pulvinar. Sed auctor rutrum dui sit amet ultricies. Etiam ut lectus velit. Phasellus commodo vitae ligula eu rutrum. Ut commodo at est ac venenatis. Nullam condimentum leo euismod arcu lobortis scelerisque. Fusce odio eros, fringilla eu odio commodo, dapibus dapibus libero. Donec dolor ante, tincidunt a hendrerit at, ultricies sed risus. Donec id nunc hendrerit, finibus diam eget, eleifend elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec molestie iaculis lorem id eleifend. In hac habitasse platea dictumst. Vivamus eget lectus malesuada, laoreet ipsum vel, euismod est.
+          </p>
+        </div>
+
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-off slideanim"></span>
+          <h4>Erica Bohler</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel est at neque semper vulputate id id dolor. Nullam fringilla vel augue eu pulvinar. Sed auctor rutrum dui sit amet ultricies. Etiam ut lectus velit. Phasellus commodo vitae ligula eu rutrum. Ut commodo at est ac venenatis. Nullam condimentum leo euismod arcu lobortis scelerisque. Fusce odio eros, fringilla eu odio commodo, dapibus dapibus libero. Donec dolor ante, tincidunt a hendrerit at, ultricies sed risus. Donec id nunc hendrerit, finibus diam eget, eleifend elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec molestie iaculis lorem id eleifend. In hac habitasse platea dictumst. Vivamus eget lectus malesuada, laoreet ipsum vel, euismod est.
+          </p>
+        </div>
+
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-off slideanim"></span>
+          <h4>Christopher Scott</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel est at neque semper vulputate id id dolor. Nullam fringilla vel augue eu pulvinar. Sed auctor rutrum dui sit amet ultricies. Etiam ut lectus velit. Phasellus commodo vitae ligula eu rutrum. Ut commodo at est ac venenatis. Nullam condimentum leo euismod arcu lobortis scelerisque. Fusce odio eros, fringilla eu odio commodo, dapibus dapibus libero. Donec dolor ante, tincidunt a hendrerit at, ultricies sed risus. Donec id nunc hendrerit, finibus diam eget, eleifend elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec molestie iaculis lorem id eleifend. In hac habitasse platea dictumst. Vivamus eget lectus malesuada, laoreet ipsum vel, euismod est.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-blue">
+      <h2 class="text-center slideanim">What Our Students and Parents Say</h2>
+      <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in scelerisque justo. Donec pretium scelerisque accumsan. Proin in tincidunt eros, vitae blandit lectus. Vivamus faucibus felis id arcu rutrum, vel viverra metus scelerisque. Nunc eu aliquam lectus. Nulla ac mauris velit. Vestibulum lobortis ut turpis sit amet laoreet. Vestibulum tincidunt.
+              <br>
+              <span style="font-style:normal;">Michael Row, Dad to Earl Young</span>
+            </h4>
+          </div>
+
+          <div class="item">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in scelerisque justo. Donec pretium scelerisque accumsan. Proin in tincidunt eros, vitae blandit lectus. Vivamus faucibus felis id arcu rutrum, vel viverra metus scelerisque. Nunc eu aliquam lectus. Nulla ac mauris velit. Vestibulum lobortis ut turpis sit amet laoreet. Vestibulum tincidunt.
+              <br>
+              <span style="font-style:normal;">Nancy Row, Mom to Earl Young</span>
+            </h4>
+          </div>
+
+          <div class="item">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in scelerisque justo. Donec pretium scelerisque accumsan. Proin in tincidunt eros, vitae blandit lectus. Vivamus faucibus felis id arcu rutrum, vel viverra metus scelerisque. Nunc eu aliquam lectus. Nulla ac mauris velit. Vestibulum lobortis ut turpis sit amet laoreet. Vestibulum tincidunt.
+              <br>
+              <span style="font-style:normal;">Roy Row, Uncle to Earl Young</span>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="text-center">
+        <h2>Pricing</h2>
+        <h4>Choose a payment plan that works for you</h4>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading slideanim">
+              <h1>Basic</h1>
+            </div>
+            <div class="panel-body">
+              <p><strong>20</strong> Lorem</p>
+              <p><strong>15</strong> Ipsum</p>
+              <p><strong>5</strong> Dolor</p>
+              <p><strong>2</strong> Sit</p>
+              <p><strong>Endless</strong> Amet</p>
+            </div>
+            <div class="panel-footer">
+              <h3>$19</h3>
+              <h4>per month</h4>
+              <button class="btn btn-lg">Sign Up</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading slideanim">
+              <h1>Pro</h1>
+            </div>
+            <div class="panel-body">
+              <p><strong>50</strong> Lorem</p>
+              <p><strong>25</strong> Ipsum</p>
+              <p><strong>10</strong> Dolor</p>
+              <p><strong>5</strong> Sit</p>
+              <p><strong>Endless</strong> Amet</p>
+            </div>
+            <div class="panel-footer">
+              <h3>$29</h3>
+              <h4>per month</h4>
+              <button class="btn btn-lg">Sign Up</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading slideanim">
+              <h1>Premium</h1>
+            </div>
+            <div class="panel-body">
+              <p><strong>100</strong> Lorem</p>
+              <p><strong>50</strong> Ipsum</p>
+              <p><strong>25</strong> Dolor</p>
+              <p><strong>10</strong> Sit</p>
+              <p><strong>Endless</strong> Amet</p>
+            </div>
+            <div class="panel-footer">
+              <h3>$49</h3>
+              <h4>per month</h4>
+              <button class="btn btn-lg">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-blue">
+      <h2 class="text-center">CONTACT</h2>
+      <div class="row">
+        <div class="col-sm-5">
+          <p>Contact us and we'll get back to you within 24 hours.</p>
+          <p><span class="glyphicon glyphicon-map-marker"></span> San Francisco,CA</p>
+          <p><span class="glyphicon glyphicon-phone"></span>510-123-4567</p>
+          <p><span class="glyphicon glyphicon-envelope"></span> money@onescholarship.com</p>
+        </div>
+        <div class="col-sm-7">
+          <div class="row">
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+            </div>
+            <div class="col-sm-6 form-group">
+              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+            </div>
+          </div>
+          <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+          <div class="row">
+            <div class="col-sm-12 form-group">
+              <button class="btn btn-default pull-right" type="submit">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#services">COMPANY</a></li>
+            <li><a href="#portfolio">FOUNDERS</a></li>
+            <li><a href="#pricing">PRICING</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <footer class="container-fluid text-center">
+      <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+      <p>Djola Software <a href="http://www.w3schools.com" title="Visit w3schools"><www class="djolasoftware"></www>.com</a></p>
+    </footer>
+
+</section>
 </body>
+
 </html>
