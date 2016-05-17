@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
-    # @student = Student.new(student_params)
+    # @student = Student.new(student_params.downcase)
 
     respond_to do |format|
       if @student.save

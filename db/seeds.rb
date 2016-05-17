@@ -24,12 +24,13 @@ User.create(email: 'ethan@gmail.com', password: 'ethan12345')
 User.create(email: 'karlton@gmail.com', password: 'karlton12345')
 
 # Student.create(first_name: 'Karlton', last_name: 'Moore', student_status: 'college', zip_code: '07106', gender: 'male', ethnicity: 'native american', gpa: '2.5', major: 'biology', user_id: 5)
+User.create(email: 'chris@gmail.com', password: 'chris12345')
 
 Scholarship.create(name: 'National Association of Letter Carriers-William Doherty Scholarship', student_status: 'high_school', gender: '0', ethnicity: '0', gpa: '0', major: 'political science', website: 'http://www.nalc.org/nalc/members/scholarships.html#doherty', deadline: '2015-12-02', amount: '$2500', other: 'nalc', community_service: '0')
 
 Scholarship.create(name: 'National Center for Learning Disabilities-Anne Ford Scholarship', student_status: 'high_school', gender: '0', ethnicity: '0', gpa: '0', major: '0', website: 'http://www.ncld.org/content/view/871/456074/', deadline: '2016-12-15', amount: '$5,000', other: 'learning disabilities', community_service: '0')
 
-Scholarship.create(name: 'STEP UP & ABOVE Award Scholarship', student_status: 'college', gender: '0', ethnicity: 'African American', gpa: '3.0', major: '0', website: 'http://www.bigfun.org/generalinfo/stepup.asp', deadline:'2016-07-15', amount: '$10,000', other: 'significant life change', community_service: '0')
+Scholarship.create(name: 'STEP UP & ABOVE Award Scholarship', student_status: 'college', gender: '0', ethnicity: 'african american', gpa: '3.0', major: '0', website: 'http://www.bigfun.org/generalinfo/stepup.asp', deadline:'2016-07-15', amount: '$10,000', other: 'significant life change', community_service: '0')
 
 Scholarship.create(name: 'California Peace Officers Association Scholarship', student_status: 'college', gender: 'female', ethnicity: '0', gpa: '2.7', major: 'criminal justice', website: 'http://camemorial.org/scholarship.php', deadline: '2016-06-30', amount: '$3,000', other: 'deceased police officer', community_service: '0')
 

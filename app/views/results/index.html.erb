@@ -1,25 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Results</h1>
+<div class="container-fluid bg-blue jumbotron">
+  <h1>My Scholarship Results</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container-fluid">
 
-  <tbody>
-    <% @match6.each do |match| %>
-    <br>
-    <%= match %>
-    <br>
-    <% end %>
-  </tbody>
-</table>
+  <% @scholarship.each do |match| %>
+  <div class="row">
+    <div class="col-md-8">
+      <%= link_to "#{match.name}", student_scholarship_path(@student, @scholarship) %>
+      <br>
+      <br>
+    </div>
 
-<br>
+    <div class="checkbox col-md-4">
+      <label><input type="checkbox" value=""></label>
+    </div>
 
-<%= link_to 'View My Profile', student_path(@student) %> |
-<%= link_to 'Edit My Profile', edit_student_path(@student) %> |
-<%= link_to 'All Scholarships', student_scholarships_path(@student) %>
+  </div>
+  <% end %>
+
+<div class="row">
+  <div class="col-md-8">
+  <button class="btn btn-default">
+    <%= link_to 'View My Profile', student_path(@student) %></button>
+  <button class="btn btn-default">
+    <%= link_to 'Edit My Profile', edit_student_path(@student) %></button>
+  <button class="btn btn-default">
+    <%= link_to 'All Scholarships', student_scholarships_path(@student) %></button>
+  </div>
+
+  <div class="col-md-4">
+    <button class="btn btn-default">
+      Apply
+      </div>
+    </button>
+  </div>
+
+</div>

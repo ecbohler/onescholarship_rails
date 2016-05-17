@@ -77,7 +77,7 @@ class ScholarshipsController < ApplicationController
   end
 
   def set_student
-    @student = Student.find(params[:id])
+    @student = Student.find(params[:student_id])
   end
 
     # Never trust parameters from the scary internet, only allow the white list through.

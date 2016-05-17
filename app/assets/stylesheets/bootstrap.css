@@ -263,7 +263,7 @@ th {
 
 .navbar {
     margin-bottom: 0;
-    background-color: #f4511e;
+    background-color: #8C1E07;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -273,7 +273,7 @@ th {
 }
 
 .navbar li a, .navbar .navbar-brand {
-    color: #1c80db !important;
+    color: #8C1E07 !important;
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
@@ -289,8 +289,8 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../assets/glyphicons-halflings-regular.eot');
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../assets/glyphicons-halflings-regular.woff2') format('woff2'), url('../assets/glyphicons-halflings-regular.woff') format('woff'), url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -1123,7 +1123,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #8C1E07;
   text-decoration: none;
 }
 a:hover,
@@ -1399,7 +1399,7 @@ a.text-danger:focus {
   color: #843534;
 }
 .bg-blue {
-  background-color: #1c80db;
+  background-color: #8C1E07;
 }
 
 .bg-primary {
@@ -4991,7 +4991,7 @@ a.badge:focus {
 }
 
 .logo-small {
-  /*color: #1c80db;*/
+  /*color: #8C1E07;*/
   font-size: 50px;
 }
 
@@ -5021,7 +5021,7 @@ a.badge:focus {
 }
 
 .panel {
-  border: 1px solid #1c80db;
+  border: 1px solid #8C1E07;
   border-radius:0;
   transition: box-shadow 0.5s;
 }
@@ -5031,14 +5031,14 @@ a.badge:focus {
 }
 
 .panel-footer .btn:hover {
-  border: 1px solid #1c80db;
+  border: 1px solid #8C1E07;
   background-color: #fff !important;
-  color: #1c80db;
+  color: #8C1E07;
 }
 
 .panel-heading {
   color: #fff !important;
-  background-color: #1c80db !important;
+  background-color: #8C1E07 !important;
   padding: 25px;
   border-bottom: 1px solid transparent;
   border-top-left-radius: 0px;
@@ -5062,7 +5062,7 @@ a.badge:focus {
 
 .panel-footer .btn {
   margin: 15px 0;
-  background-color: #1c80db;
+  background-color: #8C1E07;
   color: #fff;
 }
 
@@ -5105,7 +5105,7 @@ a.badge:focus {
   /*padding-bottom: 30px;*/
   margin-bottom: 30px;
   color: #fff;
-  background-color: #1c80db;
+  background-color: #8C1E07;
   padding: 100px 25px;
   margin-right: auto;
   margin-left: auto;
@@ -6021,7 +6021,7 @@ button.close {
 }
 
 .logo {
-  /*color: #1c80db;*/
+  /*color: #8C1E07;*/
   font-size: 200px;
 }
 

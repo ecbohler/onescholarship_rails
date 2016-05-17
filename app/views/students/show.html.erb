@@ -1,46 +1,103 @@
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First Name:</strong>
-  <%= @student.first_name %>
-</p>
+  <div class="container-fluid bg-blue jumbotron">
+    <h1>MY PROFILE</h1>
+  </div>
 
-<p>
-  <strong>Last Name:</strong>
-  <%= @student.last_name %>
-</p>
+  <p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <strong>First Name:</strong>
+        </div>
+        <div class="col-md-2">
+          <%= @student.first_name.upcase %>
+        </div>
+      </div>
+    </p>
 
-<p>
-  <strong>Student Status:</strong>
-  <%= @student.student_status %>
-</p>
+    <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Last Name:</strong>
+        </div>
+        <div class="col-md-2">
+          <%= @student.last_name.upcase %>
+        </div>
+      </div>
+    </p>
 
-<p>
-  <strong>Zip Code:</strong>
-  <%= @student.zip_code %>
-</p>
+    <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Student Status:</strong>
+        </div>
+        <div class="col-md-2">
+          <%= @student.student_status.upcase %>
+        </div>
+      </div>
+    </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @student.gender %>
-</p>
+    <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Zip Code:</strong>
+        </div>
+        <div class="col-md-2">
+          <%= @student.zip_code %>
+        </div>
+      </div>
+    </p>
 
-<p>
-  <strong>Ethnicity:</strong>
-  <%= @student.ethnicity %>
-</p>
+    <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Gender:</strong>
+        </div>
+        <div class="col-md-2">
+          <%= @student.gender.upcase %>
+        </div>
+      </div>
+    </p>
 
-<p>
-  <strong>GPA:</strong>
-  <%= @student.gpa %>
-</p>
+    <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Ethnicity:</strong>
+        </div>
+        <div class="col-md-2">
+          <%= @student.ethnicity.upcase %>
+        </div>
+      </div>
+    </p>
 
-<p>
-  <strong>Major:</strong>
-  <%= @student.major %>
-</p>
+    <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>GPA:</strong>
+        </div>
+        <div class="col-md-2">
+          <%= @student.gpa %>
+        </div>
+      </div>
+    </p>
 
-<%= link_to 'Edit My Profile', edit_student_path(@student) %> |
-<%= link_to 'All Scholarships', student_scholarships_path(@student) %> |
-<%= link_to 'My Results', student_results_path(@student) %>
+    <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Major:</strong>
+        </div>
+        <div class="col-md-2">
+          <%= @student.major.upcase %>
+        </div>
+      </div>
+    </p>
 
+    <button class="btn btn-default">
+      <%= link_to 'Edit My Profile', edit_student_path(@student) %></button>
+      <button class="btn btn-default">
+        <%= link_to 'All Scholarships', student_scholarships_path(@student) %></button>
+        <button class="btn btn-default">
+          <%= link_to 'My Results', student_results_path(@student) %></button>
+
+</div>

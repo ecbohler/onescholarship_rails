@@ -3,12 +3,13 @@
 <br>
 <% if user_signed_in? %>
 <div class="container">
-<h4 class="text-right text-capitalize">Welcome to OneScholarship <%= current_user.email %></h4>
+  <h4 class="text-right text-capitalize">Welcome to OneScholarship <%= current_user.email %></h4>
 </div>
 
 <div class="container">
-<p class="text-right"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></p>
+  <p class="text-right"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></p>
 </div>
+
 
 <% else %>
 <div class="container">
@@ -17,8 +18,9 @@
 
 <div class="container">
   <p class="text-right">
-<button class="btn btn-default"><%= link_to 'Login', new_user_session_path %></button></p>
-</div>
+    <button class="btn btn-default"><%= link_to 'Login', new_user_session_path %></button></p>
 
-<% end %>
+  </div>
+
+  <% end %>
 

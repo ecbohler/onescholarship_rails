@@ -1,59 +1,134 @@
+<div class="container-fluid jumbotron bg-blue">
+  <h1>Scholarship Information</h1>
+</div>
+
 
 <p>
-  <strong>Name:</strong>
-  <%= @scholarship.name %>
-</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2">
+        <strong>Name:</strong>
+      </div>
+      <div class="col-sm-2">
+        <%= @scholarship.name %>
+      </div>
+    </div>
+  </p>
 
-<p>
-  <strong>Student staus:</strong>
-  <%= @scholarship.student_status %>
-</p>
+  <p>
+    <div class="row">
+      <div class="col-sm-2">
+        <strong>Student staus:</strong>
+      </div>
+      <div class="col-sm-2">
+        <%= @scholarship.student_status %>
+      </div>
+    </div>
+  </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @scholarship.gender %>
-</p>
+  <p>
+    <div class="row">
+      <div class="col-sm-2">
+        <strong>Gender:</strong>
+      </div>
+      <div class="col-sm-2">
+        <%= @scholarship.gender %>
+      </div>
+    </div>
+  </p>
 
-<p>
-  <strong>Ethnicity:</strong>
-  <%= @scholarship.ethnicity %>
-</p>
+  <p>
+    <div class="row">
+      <div class="col-sm-2">
+        <strong>Ethnicity:</strong>
+      </div>
+      <div class="col-sm-2">
+        <%= @scholarship.ethnicity %>
+      </div>
+    </div>
+  </p>
 
-<p>
-  <strong>Gpa:</strong>
-  <%= @scholarship.gpa %>
-</p>
+  <p>
+    <div class="row">
+      <div class="col-sm-2">
+        <strong>Gpa:</strong>
+      </div>
+      <div class="col-sm-2">
+        <%= @scholarship.gpa %>
+      </div>
+    </div>
+  </p>
 
-<p>
-  <strong>Major:</strong>
-  <%= @scholarship.major %>
-</p>
+  <p>
+    <div class="row">
+      <div class="col-sm-2">
+        <strong>Major:</strong>
+      </div>
+      <div class="col-sm-2">
+        <%= @scholarship.major %>
+      </div>
+    </div>
+  </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @scholarship.website %>
-</p>
+  <p>
+    <div class="row">
+      <div class="col-sm-2">
+        <strong>Website:</strong>
+      </div>
+      <div class="col-sm-2">
+        <%= @scholarship.website %>
+      </div>
+    </div>
+  </p>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @scholarship.deadline %>
-</p>
+  <p>
+    <div class="row">
+      <div class="col-sm-2">
+        <strong>Deadline:</strong>
+      </div>
+      <div class="col-sm-2">
+        <%= @scholarship.deadline %>
+      </div>
+    </div>
+  </p>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @scholarship.amount %>
-</p>
+  <p>
+    <div class="row">
+      <div class="col-sm-2">
+        <strong>Amount:</strong>
+      </div>
+      <div class="col-sm-2">
+        <%= @scholarship.amount %>
+      </div>
+    </div>
+  </p>
 
-<p>
-  <strong>Other:</strong>
-  <%= @scholarship.other %>
-</p>
+  <p>
+    <div class="row">
+      <div class="col-sm-2">
+        <strong>Other:</strong>
+      </div>
+      <div class="col-sm-2">
+        <%= @scholarship.other %>
+      </div>
+    </div>
+  </p>
 
-<p>
-  <strong>Community service:</strong>
-  <%= @scholarship.community_service %>
-</p>
+  <p>
+    <div class="row">
+      <div class="col-sm-2">
+        <strong>Community service:</strong>
+      </div>
+      <div class="col-sm-2">
+        <%= @scholarship.community_service %>
+      </div>
+    </div>
+  </p>
 
-<%= link_to 'Edit My Profile', edit_student_path(@student) %> |
-<%= link_to 'All Scholarships', student_scholarships_path(@student) %> |
-<%= link_to 'My Results', student_results_path(@student) %>
+  <button class="btn btn-default">
+    <%= link_to 'View My Profile', student_path(@student) %></button>
+    <button class="btn btn-default">
+      <%= link_to 'Edit My Profile', edit_student_path(@student) %></button>
+      <button class="btn btn-default">
+        <%= link_to 'My Results', student_results_path(@student) %></button>
+      </div>
