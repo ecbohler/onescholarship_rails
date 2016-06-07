@@ -4,13 +4,16 @@ Rails.application.routes.draw do
     get "users/login" => "users/sessions#new", :as => :users_sign_in
     get "users/logout" => "users/sessions#delete", :as => :users_sign_out
   end
+
   get 'home/index'
 
   # get ':last_name', to: 'students#show', as: :student
 
   resources :students do
     resources :scholarships, only: [:show, :index]
-    resources :results, only: [:index]
+    resources :results do
+      put 'apply', on: :collection
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
