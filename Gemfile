@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.5.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -29,11 +29,17 @@ gem 'awesome_print'
 
 gem 'normalize-rails'
 
-gem 'devise'
+gem 'devise', '~> 4.1', '>= 4.1.1'
 
 gem 'brakeman', :require => false
 
 gem 'cancancan', '~> 1.10'
+
+# gem 'twitter-bootstrap-rails'
+
+# gem 'therubyracer'
+
+# gem 'less-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

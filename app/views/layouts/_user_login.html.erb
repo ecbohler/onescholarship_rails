@@ -6,21 +6,38 @@
   <h4 class="text-right text-capitalize">Welcome to OneScholarship <%= current_user.email %></h4>
 </div>
 
-<div class="container">
-  <p class="text-right"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></p>
-</div>
-
-
-<% else %>
-<div class="container">
-  <h4 class="text-right text-capitalize">You are not logged in.</h4>
-</div>
+<br>
 
 <div class="container">
-  <p class="text-right">
-    <button class="btn btn-default"><%= link_to 'Login', new_user_session_path %></button></p>
 
-  </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav navbar-right">
+      <li> <button class="btn btn-default"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></button></li>
+      <li>      <button class="btn btn-default">
+        <%= link_to 'View My Profile', student_path(current_user) %></button></li>
+        <li>        <button class="btn btn-default">
+          <%= link_to 'My Results', student_results_path(current_user) %></button></li>
+                  <li>        <button class="btn btn-default">
+          <%= link_to 'Edit My Profile', edit_student_path(current_user) %></button></li>
+                  <li>        <button class="btn btn-default">
+          <%= link_to 'All Available Scholarships', student_scholarships_path(current_user) %></button></li>
+        </ul>
+      </div>
 
-  <% end %>
+    </div>
 
+
+    <% else %>
+    <div class="container">
+      <h4 class="text-right text-capitalize">You are not logged in.</h4>
+    </div>
+
+    <div class="container">
+      <p class="text-right">
+        <button class="btn btn-default"><%= link_to 'Login', new_user_session_path %></button></p>
+
+      </div>
+
+      <% end %>
+
+<br>

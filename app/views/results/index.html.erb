@@ -6,6 +6,8 @@
 
 <div class="container-fluid">
 
+  <%= form_tag apply_student_results_path, :method => :put do %>
+
   <% @scholarship.each do |match| %>
   <div class="row">
     <div class="col-md-8">
@@ -14,28 +16,18 @@
       <br>
     </div>
 
-    <div class="checkbox col-md-4">
-      <label><input type="checkbox" value=""></label>
-    </div>
-
   </div>
   <% end %>
 
-<div class="row">
-  <div class="col-md-8">
-  <button class="btn btn-default">
-    <%= link_to 'View My Profile', student_path(@student) %></button>
-  <button class="btn btn-default">
-    <%= link_to 'Edit My Profile', edit_student_path(@student) %></button>
-  <button class="btn btn-default">
-    <%= link_to 'All Scholarships', student_scholarships_path(@student) %></button>
-  </div>
-
-  <div class="col-md-4">
-    <button class="btn btn-default">
-      Apply
+  <div class="row">
+    <div class="col-md-8">
+    <%= submit_tag "Apply" %>
+    <!-- <button class="btn btn-default"> -->
+      <!-- Apply -->
+      <% end %>
+    </div>
       </div>
-    </button>
+    <!-- </button> -->
   </div>
 
 </div>

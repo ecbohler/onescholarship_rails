@@ -4,8 +4,8 @@ class ResultsController < ApplicationController
 
   before_action :authenticate_user!
 
-  load_and_authorize_resource
-  before_action :set_result, only: [:show]
+  # load_and_authorize_resource
+  before_action :set_result, only: [:show, :edit, :update, :destroy]
   before_action :set_scholarship, only: [:show, :edit, :update, :destroy]
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
@@ -14,7 +14,6 @@ class ResultsController < ApplicationController
   def index
     @match = []
     @student = Student.find(params[:student_id])
-    # @scholarship = Scholarship.find(params[:id])
 
     authorize! :read, @student
     @scholarships = Scholarship.all
@@ -69,7 +68,7 @@ class ResultsController < ApplicationController
     @match6 = []
             # authorize! :read, @match6
             @match5.each do |match|
-              if match.deadline >= Time.now
+              if match.deadline >= Time.zone.now
                 @match6 << match
 
               end
@@ -138,6 +137,13 @@ class ResultsController < ApplicationController
     end
   end
 
+  #selected student scholarships
+  def apply
+    @student = Student.find(params[:student_id])
+    params[:match_ids]
+    redirect_to student_results_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_result
@@ -161,6 +167,6 @@ class ResultsController < ApplicationController
     end
 
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major)
+      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email)
     end
   end

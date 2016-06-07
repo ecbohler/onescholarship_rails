@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+
   before_action :authenticate_user!
 
   load_and_authorize_resource
@@ -14,7 +15,9 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
-    @student = Student.find(params[:id])
+    # StudentMailer.welcome_email(@student).deliver_later
+
+    # p @student.gender
   end
 
   # GET /students/new
@@ -24,34 +27,36 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
-    # @student = Student.find(params[:id])
   end
 
   # POST /students
   # POST /students.json
   def create
-    # @student = Student.new(student_params.downcase)
-
-    respond_to do |format|
-      if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
-        format.json { render :show, status: :created, location: @student }
-      else
-        format.html { render :new }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
-    # @student = Student.find(params[:id])
-
-    if @student.update_attributes(student_params)
+    # if @student.update_attributes(student_params)
+    #   redirect_to @student
+    @current = @student
+    # p @current.first_name
+    @update = params[:student]
+    # p @update[:first_name]
+    if @update[:first_name] == @current.first_name &&
+       @update[:last_name] == @current.last_name &&
+       @update[:email] == @current.email &&
+       @update[:student_status] == @current.student_status &&
+       @update[:zip_code] == @current.zip_code &&
+       @update[:gender] == @current.gender &&
+       @update[:ethnicity] == @current.ethnicity &&
+       @update[:gpa] == @current.gpa &&
+       @update[:major] == @current.major
       redirect_to @student
     else
-      render 'edit'
+      @current.update(student_params)
+      StudentMailer.welcome_email(@student).deliver_later
+      render 'show'
     end
   end
 
@@ -65,7 +70,7 @@ class StudentsController < ApplicationController
     end
   end
 
-private
+  private
     # Use callbacks to share common setup or constraints between actions.
     # def set_result
     #   @result = Result.find(params[:id])
@@ -88,6 +93,6 @@ private
     end
 
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major)
+      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email)
     end
   end

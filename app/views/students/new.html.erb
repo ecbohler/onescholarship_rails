@@ -1,5 +1,59 @@
-<h1>New Student</h1>
+<div class="container-fluid">
+  <div class="container-fluid bg-blue">
+    <h1 class="text-center">Complete Your Profile</h1>
+  </div>
 
-<%= render 'form' %>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="container-fluid text-left">
+        <%= form_for :student, url: students_path do |f| %>
+        <div class="field form-group">
+          <%= f.label :first_name %><br>
+          <%= f.text_field :first_name %>
+        </div>
+        <div class="field form-group">
+          <%= f.label :last_name %><br>
+          <%= f.text_field :last_name %>
+        </div>
+        <div class="field form-group">
+          <%= f.label :email %><br>
+          <%= f.text_field :email %>
+        </div>
+        <div class="field form-group">
+          <%= f.label :student_status %><br>
+          <%= f.text_field :student_status %>
+        </div>
+        <div class="field form-group">
+          <%= f.label :zip_code %><br>
+          <%= f.text_field :zip_code %>
+        </div>
+        <div class="field form-group">
+          <%= f.label :gender %><br>
+          <%= f.text_field :gender %>
+        </div>
+        <div class="field form-group">
+          <%= f.label :ethnicity %><br>
+          <%= f.text_field :ethnicity %>
+        </div>
+        <div class="field form-group">
+          <%= f.label :gpa %><br>
+          <%= f.text_field :gpa %>
+        </div>
+        <div class="field form-group">
+          <%= f.label :major %><br>
+          <%= f.text_field :major %>
+        </div>
+        <br>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+        <% end %>
+      </div>
+    </div>
 
-<%= link_to 'Back', students_path %>
+    <div class="col-sm-offset-8 ">
+      <span class="glyphicon glyphicon-blackboard logo slideanim"></span>
+    </div>
+  </div>
+
+</div>

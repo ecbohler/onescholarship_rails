@@ -30,6 +30,17 @@
     <p>
       <div class="row">
         <div class="col-md-2">
+          <strong>Email Address:</strong>
+        </div>
+        <div class="col-md-2">
+          <%= @student.email %>
+        </div>
+      </div>
+    </p>
+
+    <p>
+      <div class="row">
+        <div class="col-md-2">
           <strong>Student Status:</strong>
         </div>
         <div class="col-md-2">
@@ -93,11 +104,5 @@
       </div>
     </p>
 
-    <button class="btn btn-default">
-      <%= link_to 'Edit My Profile', edit_student_path(@student) %></button>
-      <button class="btn btn-default">
-        <%= link_to 'All Scholarships', student_scholarships_path(@student) %></button>
-        <button class="btn btn-default">
-          <%= link_to 'My Results', student_results_path(@student) %></button>
 
 </div>
