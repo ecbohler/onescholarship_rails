@@ -89,6 +89,6 @@ class ScholarshipsController < ApplicationController
     end
 
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email)
+      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email, :avatar)
     end
   end

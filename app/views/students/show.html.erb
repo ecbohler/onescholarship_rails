@@ -6,6 +6,17 @@
 
   <p>
     <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <strong>Profile Picture:</strong>
+      </div>
+      <div class="col-md-2">
+        <%= image_tag @student.avatar.url(:thumb) %>
+      </div>
+    </div>
+  </p>
+
+  <p>
       <div class="row">
         <div class="col-md-2">
           <strong>First Name:</strong>
@@ -104,5 +115,4 @@
       </div>
     </p>
 
-
-</div>
+  </div>

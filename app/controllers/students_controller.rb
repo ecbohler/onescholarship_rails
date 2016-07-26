@@ -39,22 +39,24 @@ class StudentsController < ApplicationController
   def update
     # if @student.update_attributes(student_params)
     #   redirect_to @student
-    @current = @student
+    # p params
+    # @current = @student
     # p @current.first_name
     @update = params[:student]
     # p @update[:first_name]
-    if @update[:first_name] == @current.first_name &&
-       @update[:last_name] == @current.last_name &&
-       @update[:email] == @current.email &&
-       @update[:student_status] == @current.student_status &&
-       @update[:zip_code] == @current.zip_code &&
-       @update[:gender] == @current.gender &&
-       @update[:ethnicity] == @current.ethnicity &&
-       @update[:gpa] == @current.gpa &&
-       @update[:major] == @current.major
+    if @update[:first_name] == @student.first_name &&
+       @update[:last_name] == @student.last_name &&
+       @update[:email] == @student.email &&
+       @update[:student_status] == @student.student_status &&
+       @update[:zip_code] == @student.zip_code &&
+       @update[:gender] == @student.gender &&
+       @update[:ethnicity] == @student.ethnicity &&
+       @update[:gpa] == @student.gpa &&
+       @update[:major] == @student.major &&
+       @update[:avatar] == @student.avatar
       redirect_to @student
     else
-      @current.update(student_params)
+      @student.update(student_params)
       StudentMailer.welcome_email(@student).deliver_later
       render 'show'
     end
@@ -93,6 +95,6 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email)
+      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email, :avatar)
     end
   end
