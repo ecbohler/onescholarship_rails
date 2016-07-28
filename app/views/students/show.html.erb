@@ -6,17 +6,17 @@
 
   <p>
     <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2">
-        <strong>Profile Picture:</strong>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Profile Picture:</strong>
+        </div>
+        <div class="col-md-2">
+          <%= image_tag @student.avatar.url(:thumb) %>
+        </div>
       </div>
-      <div class="col-md-2">
-        <%= image_tag @student.avatar.url(:thumb) %>
-      </div>
-    </div>
-  </p>
+    </p>
 
-  <p>
+    <p>
       <div class="row">
         <div class="col-md-2">
           <strong>First Name:</strong>
@@ -111,6 +111,71 @@
         </div>
         <div class="col-md-2">
           <%= @student.major.upcase %>
+        </div>
+      </div>
+    </p>
+
+    <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Resume:</strong>
+        </div>
+        <div class="col-md-2">
+          <a href="<%= @student.resume.url %>">
+            <img src="/assets/Document-Icon-small_1.png" alt="Document" style="width:30px;height:30px"></img>
+          </a>
+        </div>
+      </div>
+    </p>
+
+        <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Personal Statement:</strong>
+        </div>
+        <div class="col-md-2">
+          <a href="<%= @student.personal_statement.url %>">
+            <img src="/assets/Document-Icon-small_1.png" alt="Document" style="width:30px;height:30px"></img>
+          </a>
+        </div>
+      </div>
+    </p>
+
+        <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Transcript/Grades:</strong>
+        </div>
+        <div class="col-md-2">
+          <a href="<%= @student.transcript_grades.url %>">
+            <img src="/assets/Document-Icon-small_1.png" alt="Document" style="width:30px;height:30px"></img>
+          </a>
+        </div>
+      </div>
+    </p>
+
+        <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Recommendations:</strong>
+        </div>
+        <div class="col-md-2">
+          <a href="<%= @student.recommendations.url %>">
+            <img src="/assets/Document-Icon-small_1.png" alt="Document" style="width:30px;height:30px"></img>
+          </a>
+        </div>
+      </div>
+    </p>
+
+        <p>
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Other:</strong>
+        </div>
+        <div class="col-md-2">
+          <a href="<%= @student.other.url %>">
+            <img src="/assets/Document-Icon-small_1.png" alt="Document" style="width:30px;height:30px"></img>
+          </a>
         </div>
       </div>
     </p>

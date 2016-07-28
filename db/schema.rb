@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726165606) do
+ActiveRecord::Schema.define(version: 20160728193953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "payments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "results", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -39,8 +44,8 @@ ActiveRecord::Schema.define(version: 20160726165606) do
 
   create_table "students", force: :cascade do |t|
     t.string   "first_name"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "last_name"
     t.string   "student_status"
     t.string   "zip_code"
@@ -54,6 +59,26 @@ ActiveRecord::Schema.define(version: 20160726165606) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "resume_file_name"
+    t.string   "resume_content_type"
+    t.integer  "resume_file_size"
+    t.datetime "resume_updated_at"
+    t.string   "personal_statement_file_name"
+    t.string   "personal_statement_content_type"
+    t.integer  "personal_statement_file_size"
+    t.datetime "personal_statement_updated_at"
+    t.string   "transcript_grades_file_name"
+    t.string   "transcript_grades_content_type"
+    t.integer  "transcript_grades_file_size"
+    t.datetime "transcript_grades_updated_at"
+    t.string   "recommendations_file_name"
+    t.string   "recommendations_content_type"
+    t.integer  "recommendations_file_size"
+    t.datetime "recommendations_updated_at"
+    t.string   "other_file_name"
+    t.string   "other_content_type"
+    t.integer  "other_file_size"
+    t.datetime "other_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

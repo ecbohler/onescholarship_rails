@@ -11,9 +11,8 @@ Rails.application.routes.draw do
 
   resources :students do
     resources :scholarships, only: [:show, :index]
-    resources :results do
-      put 'apply', on: :collection
-    end
+    resources :results
+    resources :payments
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -53,7 +53,12 @@ class StudentsController < ApplicationController
        @update[:ethnicity] == @student.ethnicity &&
        @update[:gpa] == @student.gpa &&
        @update[:major] == @student.major &&
-       @update[:avatar] == @student.avatar
+       @update[:avatar] == @student.avatar &&
+       @update[:resume] == @student.resume &&
+       @update[:personal_statement] == @student.personal_statement &&
+       @update[:transcript_grades] == @student.transcript_grades &&
+       @update[:recommendations] == @student.recommendations &&
+       @update[:other] == @student.other
       redirect_to @student
     else
       @student.update(student_params)
@@ -95,6 +100,6 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email, :avatar)
+      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email, :avatar, :resume, :personal_statement, :transcript_grades, :recommendations, :other, :stripe_card_token)
     end
   end

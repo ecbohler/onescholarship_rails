@@ -49,8 +49,28 @@
     <%= f.text_field :major %>
   </div>
   <div class="field form-group">
-    <%= f.label :profile_picture %>
+    <%= f.label :profile_picture %><br>
     <%= f.file_field :avatar %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :resume %><br>
+    <%= f.file_field :resume %>
+  </div>
+    <div class="field form-group">
+    <%= f.label :personal_statement %><br>
+    <%= f.file_field :personal_statement %>
+  </div>
+    <div class="field form-group">
+    <%= f.label :transcript_grades %><br>
+    <%= f.file_field :transcript_grades %>
+  </div>
+    <div class="field form-group">
+    <%= f.label :recommendations %><br>
+    <%= f.file_field :recommendations %>
+  </div>
+    <div class="field form-group">
+    <%= f.label :other %><br>
+    <%= f.file_field :other %>
   </div>
   <br>
   <div class="actions">

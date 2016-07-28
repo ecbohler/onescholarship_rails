@@ -6,7 +6,6 @@
 
 <div class="container-fluid">
 
-  <%= form_tag apply_student_results_path, :method => :put do %>
 
   <% @scholarship.each do |match| %>
   <div class="row">
@@ -19,15 +18,8 @@
   </div>
   <% end %>
 
-  <div class="row">
-    <div class="col-md-8">
-    <%= submit_tag "Apply" %>
-    <!-- <button class="btn btn-default"> -->
-      <!-- Apply -->
-      <% end %>
-    </div>
-      </div>
-    <!-- </button> -->
-  </div>
+  <button type="button" class="btn btn-default"><%= link_to 'Apply Now', new_student_payment_path %></button>
+
+</div>
 
 </div>

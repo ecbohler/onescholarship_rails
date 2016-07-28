@@ -167,6 +167,6 @@ class ResultsController < ApplicationController
     end
 
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email, :avatar)
+      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email, :avatar, :resume, :personal_statement, :transcript_grades, :recommendations, :other)
     end
   end
