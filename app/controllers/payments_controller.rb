@@ -1,11 +1,13 @@
 class PaymentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  # before_action :set_payment, only: [:show, :edit, :update, :destroy]
+  before_action :set_payment, only: [:show, :edit, :update, :destroy]
+  before_action :set_result, only: [:show, :edit, :update, :destroy]
 
   # GET /payments
   # GET /payments.json
   def index
+    @student = Student.find(params[:student_id])
     @payments = Payment.all
   end
 
@@ -16,7 +18,7 @@ class PaymentsController < ApplicationController
 
   # GET /payments/new
   def new
-    @payment = params[:payment]
+    @payment = Payment.new(payment_params)
     @student = Student.find(params[:student_id])
   end
 
@@ -76,7 +78,7 @@ class PaymentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def payment_params
-      params.require(:payment).permit(:card_number)
+      params[:payment]
     end
     def student_params
       params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email, :avatar, :resume, :personal_statement, :transcript_grades, :recommendations, :other, :stripe_card_token)

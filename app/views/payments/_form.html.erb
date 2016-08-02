@@ -1,28 +1,47 @@
-<%= form_for(@student) do |f| %>
-  <% if @student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this payment from being saved:</h2>
+<%= form_for (@student) do |f| %>
+<% if @student.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
 
-      <ul>
-      <% @student.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @student.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <%f.hidden_field :stripe_card_token %>
+<% f.hidden_field :stripe_card_token %>
 
 <div class="container-fluid text-left">
+  <div class="field form-group">
+    <%= f.label :subscription_plan %><br>
+    <%= f.select :price, options_for_select([['Monthly - $19.99'], ['Quarterly - $49.99'], ['Annually - $179.99']]), prompt: 'Select a Plan' %>
+  </div>
+
   <div class="field form-group">
     <%= label_tag :card_number %><br>
     <%= text_field_tag :card_number %>
   </div>
 
+    <div class="field form-group">
+    <%= label_tag :select_month %><br>
+    <%= text_field_tag :select_month %>
+  </div>
+
+      <div class="field form-group">
+    <%= label_tag :select_year %><br>
+    <%= text_field_tag :select_year %>
+  </div>
+
+      <div class="field form-group">
+    <%= label_tag :csv_code %><br>
+    <%= text_field_tag :csv_code %>
+  </div>
+
   <div class="actions">
-    <%= submit_tag %>
+    <%= submit_tag :Submit %>
   </div>
 </div>
 
 <% end %>
-

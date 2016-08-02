@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20160728203537_add_remove_resume_to_students.rb

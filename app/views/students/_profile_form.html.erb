@@ -51,26 +51,50 @@
   <div class="field form-group">
     <%= f.label :profile_picture %><br>
     <%= f.file_field :avatar %>
+    <% if @student.avatar? %>
+    <%= f.label :replace_avatar %>
+    <%= f.check_box :remove_avatar, :checked => false %>
+    <% end %>
   </div>
   <div class="field form-group">
     <%= f.label :resume %><br>
     <%= f.file_field :resume %>
+    <% if @student.resume? %>
+    <%= f.label :replace_resume %>
+    <%= f.check_box :remove_resume, :checked => false %>
+    <% end %>
   </div>
-    <div class="field form-group">
+  <div class="field form-group">
     <%= f.label :personal_statement %><br>
     <%= f.file_field :personal_statement %>
+    <% if @student.personal_statement? %>
+    <%= f.label :replace_personal_statement %>
+    <%= f.check_box :remove_personal_statement, :checked => false %>
+    <% end %>
   </div>
-    <div class="field form-group">
+  <div class="field form-group">
     <%= f.label :transcript_grades %><br>
     <%= f.file_field :transcript_grades %>
+    <% if @student.transcript_grades? %>
+    <%= f.label :replace_transcript_grades %>
+    <%= f.check_box :remove_transcript_grades, :checked => false %>
+    <% end %>
   </div>
-    <div class="field form-group">
+  <div class="field form-group">
     <%= f.label :recommendations %><br>
     <%= f.file_field :recommendations %>
+    <% if @student.recommendations? %>
+    <%= f.label :replace_recommendations %>
+    <%= f.check_box :remove_recommendations, :checked => false %>
+    <% end %>
   </div>
-    <div class="field form-group">
+  <div class="field form-group">
     <%= f.label :other %><br>
     <%= f.file_field :other %>
+    <% if @student.other? %>
+    <%= f.label :replace_other %>
+    <%= f.check_box :remove_other, :checked => false %>
+    <% end %>
   </div>
   <br>
   <div class="actions">

@@ -45,27 +45,40 @@ class StudentsController < ApplicationController
     @update = params[:student]
     # p @update[:first_name]
     if @update[:first_name] == @student.first_name &&
-       @update[:last_name] == @student.last_name &&
-       @update[:email] == @student.email &&
-       @update[:student_status] == @student.student_status &&
-       @update[:zip_code] == @student.zip_code &&
-       @update[:gender] == @student.gender &&
-       @update[:ethnicity] == @student.ethnicity &&
-       @update[:gpa] == @student.gpa &&
-       @update[:major] == @student.major &&
-       @update[:avatar] == @student.avatar &&
-       @update[:resume] == @student.resume &&
-       @update[:personal_statement] == @student.personal_statement &&
-       @update[:transcript_grades] == @student.transcript_grades &&
-       @update[:recommendations] == @student.recommendations &&
-       @update[:other] == @student.other
-      redirect_to @student
-    else
-      @student.update(student_params)
-      StudentMailer.welcome_email(@student).deliver_later
-      render 'show'
-    end
+     @update[:last_name] == @student.last_name &&
+     @update[:email] == @student.email &&
+     @update[:student_status] == @student.student_status &&
+     @update[:zip_code] == @student.zip_code &&
+     @update[:gender] == @student.gender &&
+     @update[:ethnicity] == @student.ethnicity &&
+     @update[:gpa] == @student.gpa &&
+     @update[:major] == @student.major &&
+     @update[:avatar] == @student.avatar &&
+     @update[:resume] == @student.resume &&
+     @update[:personal_statement] == @student.personal_statement &&
+     @update[:transcript_grades] == @student.transcript_grades &&
+     @update[:recommendations] == @student.recommendations &&
+     @update[:other] == @student.other
+     redirect_to @student
+   elsif @student.remove_resume == true
+     @student.resume = nil
+   elsif @student.remove_avatar == true
+     @student.avatar = nil
+   elsif @student.remove_personal_statment == true
+     @student.personal_statement = nil
+   elsif @student.remove_transcript_grades == true
+     @student.transcript_grades = nil
+   elsif @student.remove_recommendations == true
+     @student.recommendations = nil
+   elsif @student.remove_other == true
+     @student.other = nil
+   else
+    @student.update(student_params)
+    # p params
+    # StudentMailer.welcome_email(@student).deliver_later
+    render 'show'
   end
+end
 
   # DELETE /students/1
   # DELETE /students/1.json
@@ -100,6 +113,6 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email, :avatar, :resume, :personal_statement, :transcript_grades, :recommendations, :other, :stripe_card_token)
+      params.require(:student).permit(:first_name, :last_name, :student_status, :zip_code, :gender, :ethnicity, :gpa, :major, :email, :avatar, :resume, :personal_statement, :transcript_grades, :recommendations, :other, :stripe_card_token, :price)
     end
   end

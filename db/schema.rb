@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160728193953) do
+ActiveRecord::Schema.define(version: 20160728231348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20160728193953) do
 
   create_table "students", force: :cascade do |t|
     t.string   "first_name"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
     t.string   "last_name"
     t.string   "student_status"
     t.string   "zip_code"
@@ -79,6 +79,14 @@ ActiveRecord::Schema.define(version: 20160728193953) do
     t.string   "other_content_type"
     t.integer  "other_file_size"
     t.datetime "other_updated_at"
+    t.string   "stripe_card_token"
+    t.boolean  "remove_resume",                   default: false
+    t.boolean  "remove_avatar",                   default: false
+    t.boolean  "remove_personal_statment",        default: false
+    t.boolean  "remove_transcript_grades",        default: false
+    t.boolean  "remove_recommendations",          default: false
+    t.boolean  "remove_other",                    default: false
+    t.string   "price"
   end
 
   create_table "users", force: :cascade do |t|
